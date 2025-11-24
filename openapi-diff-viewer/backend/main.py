@@ -4,12 +4,12 @@ import uvicorn
 import shutil
 import os
 import uuid
-from report_generator import generate_report
+from .report_generator import generate_report
 from fastapi.staticfiles import StaticFiles
 import pathlib
 
 app = FastAPI()
-frontend_path = pathlib.Path(__file__).parent.parent / "frontend" / "dist"
+frontend_path = pathlib.Path(__file__).parent.parent / "static"
 app.mount("/", StaticFiles(directory=frontend_path, html=True), name="frontend")
 # Enable CORS for frontend
 app.add_middleware(
