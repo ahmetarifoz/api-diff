@@ -1,0 +1,111 @@
+{
+  "summary": {
+    "added_count": 1,
+    "deleted_count": 1,
+    "updated_count": 1,
+    "breaking_count": 1
+  },
+  "changes": [
+    {
+      "id": "c7b5f2f0-8166-4016-b4d1-1ca936dacef4",
+      "path": "/users",
+      "method": "POST",
+      "status": "updated",
+      "is_breaking": false,
+      "summary_text": "Value changed at requestBody.content.application/json.schema.properties.email.type; Item added at requestBody.content.application/json.schema.properties.age",
+      "details": [
+        {
+          "location": "requestBody.content.application/json.schema.properties.email.type",
+          "old_value": "string",
+          "new_value": "integer",
+          "change_type": "value_changed"
+        },
+        {
+          "location": "requestBody.content.application/json.schema.properties.age",
+          "old_value": "not present",
+          "new_value": "{'type': 'integer'}",
+          "change_type": "item_added"
+        }
+      ]
+    },
+    {
+      "id": "50cc3ece-e6de-4e30-b9f8-cb5ef36dfc75",
+      "path": "/items",
+      "method": "GET",
+      "status": "deleted",
+      "is_breaking": true,
+      "summary_text": "Endpoint deleted",
+      "details": []
+    },
+    {
+      "id": "0010e265-25a0-4603-b7a6-145f9c668a77",
+      "path": "/items",
+      "method": "DELETE",
+      "status": "added",
+      "is_breaking": false,
+      "summary_text": "Endpoint added",
+      "details": []
+    }
+  ],
+  "api_spec": {
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Sample API",
+      "version": "1.1.0"
+    },
+    "paths": {
+      "/users": {
+        "get": {
+          "summary": "Get users",
+          "responses": {
+            "200": {
+              "description": "OK"
+            }
+          }
+        },
+        "post": {
+          "summary": "Create user",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "email": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "age": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "User created"
+            }
+          }
+        }
+      },
+      "/items": {
+        "delete": {
+          "summary": "Delete item",
+          "responses": {
+            "200": {
+              "description": "OK"
+            }
+          }
+        }
+      }
+    }
+  },
+  "raw_files": {
+    "old": "openapi: 3.0.0\ninfo:\n  title: Sample API\n  version: 1.0.0\npaths:\n  /users:\n    get:\n      summary: Get users\n      responses:\n        '200':\n          description: OK\n    post:\n      summary: Create user\n      requestBody:\n        content:\n          application/json:\n            schema:\n              type: object\n              properties:\n                email:\n                  type: string\n                name:\n                  type: string\n      responses:\n        '201':\n          description: User created\n  /items:\n    get:\n      summary: Get items\n      responses:\n        '200':\n          description: OK\n",
+    "new": "openapi: 3.0.0\ninfo:\n  title: Sample API\n  version: 1.1.0\npaths:\n  /users:\n    get:\n      summary: Get users\n      responses:\n        '200':\n          description: OK\n    post:\n      summary: Create user\n      requestBody:\n        content:\n          application/json:\n            schema:\n              type: object\n              properties:\n                email:\n                  type: integer\n                name:\n                  type: string\n                age:\n                  type: integer\n      responses:\n        '201':\n          description: User created\n  /items:\n    delete:\n      summary: Delete item\n      responses:\n        '200':\n          description: OK\n"
+  }
+}

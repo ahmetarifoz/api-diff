@@ -1,0 +1,7 @@
+prance[osv]
+deepdiff
+pydantic
+pyyaml
+fastapi[all]
+uvicorn
+python-multipart
