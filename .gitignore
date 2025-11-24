@@ -1,7 +1,16 @@
+# Build output
 frontend/dist
+
+# Temporary upload folder
 backend/uploads
+
+# Python virtual environments
 backend/venv
-frontend/node_modules
-.venv
 venv
+.venv
+
+# Node modules
+frontend/node_modules
+
+# Python cache
 __pycache__
