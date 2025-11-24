@@ -1,7 +1,7 @@
 import uuid
 import json
 from deepdiff import DeepDiff
-from comparator import compare_specs
+from .comparator import compare_specs
 
 HTTP_METHODS = ['get', 'post', 'put', 'delete', 'patch', 'options', 'head', 'trace']
 
